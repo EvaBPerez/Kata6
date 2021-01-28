@@ -16,7 +16,7 @@ public class Block {
         this.x = x;
         this.y = y;
         this.timer = new Timer();
-        this.timer.schedule(task(), 1000, 500); // es una tarea
+        //this.timer.schedule(task(), 1000, 500); // es una tarea (se mueva solo)
         this.observers = new ArrayList<>();
     }
     
@@ -45,13 +45,13 @@ public class Block {
     }
     
     public void up() {
-        if (y == 1) return;
+        if (y == MAX) return;
         y++;
         changed();
     }
     
     public void down() {
-        if (y == MAX) return;
+        if (y == 1) return;
         y--;
         changed();
     }  
